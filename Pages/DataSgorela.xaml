@@ -1,0 +1,41 @@
+﻿<Page x:Class="VAZ1403.Pages.DataSgorela"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VAZ1403.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DataSgorela">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="PStudents" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="НомѢръ" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="Возрастъ" Binding="{Binding Age}"/>
+                <DataGridTextColumn Header="ТѢлѢфонъ" Binding="{Binding Mobila}"/>
+                <DataGridTextColumn Header="СтипѢндия" Binding="{Binding Stepuxa}"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Stretch">
+            <TextBlock Text="Поиск по фамилии"/>
+            <TextBox Name="txtSearchLN" TextChanged="txtSearchLN_TextChanged"/>
+            <TextBlock Text="Фильтр по возрасту"/>
+            <ComboBox Name="cmbFiltrAge" SelectionChanged="cmbFiltrAge_SelectionChanged">
+                <ComboBoxItem Content="До 18"/>
+                <ComboBoxItem Content="18+"/>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</Page>
